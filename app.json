@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "lightsensor",
+    "slug": "lightsensor",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "lightsensor"
+}
