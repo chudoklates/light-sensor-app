@@ -1,8 +1,8 @@
 # Light Sensor app in React-Native
 
-Created for Android API level 3 and higher
-Tested on Nougat (7.0.0) and S (12.0.0) versions of Android
-Device: Pixel 5
+Created for Android API level 3 and higher  
+Tested on Nougat (7.0.0) and S (12.0.0) versions of Android  
+Device: Pixel 5  
 Node versions: lts/erbium (Node 12) - minimum, lts/gallium (Node 16)
 
 ## Requirements
