@@ -12,7 +12,7 @@ Node versions: lts/erbium (Node 12) - minimum, lts/gallium (Node 16)
 - Android Studio
 - React-Native CLI + development kit
 
-Follow the steps here to install all the requirements: (LINK)
+Follow the steps here to install all the requirements: https://reactnative.dev/docs/environment-setup
 
 ## Run the application
 
