@@ -53,3 +53,11 @@ or
 ```shell
 yarn android
 ```
+
+## Debugging
+
+Since Expo SDK 41, `react-native-reanimated` v2 causes the native debug mode to crash. This issue has not been fixed yet, and probably won't be until Expo SDK 43
+
+We use Flipper for debugging instead. Simply install and run the Flipper GUI tool, then run the app as normal. You can then access React DevTools and logs from within the Flipper GUI.
+
+[Flipper installation guide](https://fbflipper.com/docs/getting-started/index)
