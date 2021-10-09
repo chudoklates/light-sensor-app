@@ -20,6 +20,9 @@ export default MainCTA
 
 const styles = StyleSheet.create({
     cta: {
+        position: 'absolute',
+        right: 20,
+        bottom: 20,
         borderRadius: 120,
         width: 120,
         height: 120

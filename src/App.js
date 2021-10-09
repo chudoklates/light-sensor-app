@@ -11,13 +11,15 @@ import {
     Layout
 } from '@ui-kitten/components'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
-import { colors, theme } from './theme'
+import { theme } from './theme'
 import { Header, MainCTA } from './components'
+import Home from './views/Home'
 
 const App = () => {
     return (
         <Layout style={styles.container}>
             <Header />
+            <Home />
             <MainCTA />
             <StatusBar style="auto" />
         </Layout>
@@ -27,7 +29,7 @@ const App = () => {
 export default () => (
     <>
         <IconRegistry icons={EvaIconsPack} />
-        <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
+        <ApplicationProvider {...eva} theme={{ ...eva.dark, ...theme }}>
             <App />
         </ApplicationProvider>
     </>
@@ -36,12 +38,7 @@ export default () => (
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        height: '100%',
         paddingVertical: 21,
-        paddingRight: 10,
-        flexDirection: 'column',
-        backgroundColor: colors.white1,
-        alignItems: 'flex-end',
-        justifyContent: 'space-between'
+        flexDirection: 'column'
     }
 })

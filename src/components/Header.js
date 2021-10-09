@@ -30,8 +30,5 @@ const styles = StyleSheet.create({
         backgroundColor: colors.dark,
         padding: 10,
         borderRadius: 70
-    },
-    menu: {
-        backgroundColor: colors.white1
     }
 })
