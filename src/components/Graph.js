@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Dimensions, View } from 'react-native'
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory-native'
-import useLightSensor from './useLightSensor'
+import useLightSensor from '../utils/useLightSensor'
 
 const Graph = () => {
     const [data, setData] = useState([])
