@@ -11,8 +11,7 @@ import {
     Layout
 } from '@ui-kitten/components'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
-import { colors } from './theme'
-import customTheme from './theme/eva-theme.json'
+import { colors, theme } from './theme'
 import { Header, MainCTA } from './components'
 
 const App = () => {
@@ -28,7 +27,7 @@ const App = () => {
 export default () => (
     <>
         <IconRegistry icons={EvaIconsPack} />
-        <ApplicationProvider {...eva} theme={{ ...eva.light, ...customTheme }}>
+        <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
             <App />
         </ApplicationProvider>
     </>
