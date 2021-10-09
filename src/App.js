@@ -1,12 +1,10 @@
 import { StatusBar } from 'expo-status-bar'
-import React from 'react'
+import React, { useState } from 'react'
 import * as eva from '@eva-design/eva'
 import { StyleSheet } from 'react-native'
 // import { useLightSensor } from './utils'
 import {
     ApplicationProvider,
-    Button,
-    Icon,
     IconRegistry,
     Layout
 } from '@ui-kitten/components'
@@ -16,11 +14,13 @@ import { Header, MainCTA } from './components'
 import Home from './views/Home'
 
 const App = () => {
+    const [nItems, setNItems] = useState(0)
+
     return (
         <Layout style={styles.container}>
             <Header />
-            <Home />
-            <MainCTA />
+            <Home nItems={nItems} />
+            <MainCTA handlePress={() => setNItems(nItems + 1)} />
             <StatusBar style="auto" />
         </Layout>
     )
@@ -29,7 +29,7 @@ const App = () => {
 export default () => (
     <>
         <IconRegistry icons={EvaIconsPack} />
-        <ApplicationProvider {...eva} theme={{ ...eva.dark, ...theme }}>
+        <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
             <App />
         </ApplicationProvider>
     </>

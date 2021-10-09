@@ -7,10 +7,11 @@ const AddIcon = (props) => (
     <Icon name="plus-circle-outline" height="80" width="80" {...props} />
 )
 
-const MainCTA = (props) => (
+const MainCTA = ({ handlePress, ...props }) => (
     <Button
         accessoryLeft={AddIcon}
         size="giant"
+        onPress={handlePress}
         style={[styles.cta, styles.shadow]}
         {...props}
     />
