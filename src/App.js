@@ -5,17 +5,21 @@ import { StyleSheet } from 'react-native'
 // import { useLightSensor } from './utils'
 import {
     ApplicationProvider,
+    Button,
+    Icon,
     IconRegistry,
     Layout
 } from '@ui-kitten/components'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
 import { colors } from './theme'
-import { Header } from './components'
+import customTheme from './theme/eva-theme.json'
+import { Header, MainCTA } from './components'
 
 const App = () => {
     return (
         <Layout style={styles.container}>
             <Header />
+            <MainCTA />
             <StatusBar style="auto" />
         </Layout>
     )
@@ -24,7 +28,7 @@ const App = () => {
 export default () => (
     <>
         <IconRegistry icons={EvaIconsPack} />
-        <ApplicationProvider {...eva} theme={eva.light}>
+        <ApplicationProvider {...eva} theme={{ ...eva.light, ...customTheme }}>
             <App />
         </ApplicationProvider>
     </>
@@ -35,9 +39,10 @@ const styles = StyleSheet.create({
         flex: 1,
         height: '100%',
         paddingVertical: 21,
+        paddingRight: 10,
         flexDirection: 'column',
         backgroundColor: colors.white1,
-        alignItems: 'center',
-        justifyContent: 'flex-start'
+        alignItems: 'flex-end',
+        justifyContent: 'space-between'
     }
 })
