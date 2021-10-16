@@ -1894,6 +1894,11 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
+"@react-native-firebase/database@^12.9.1":
+  version "12.9.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-12.9.1.tgz#28ce4578a2a3b5ed5e798f3d5120c6d2d20f3f49"
+  integrity sha512-4FhEPMrusvZ2Gs6VumXmbWW419rxqgEj1GcpELqyLqiZWTjFv3C/IicNxte/l++8EdYJDGkCXXDWGdy2RaQfqQ==
+
 "@react-native/normalize-color@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@react-native/normalize-color/-/normalize-color-2.0.0.tgz#da955909432474a9a0fe1cbffc66576a0447f567"
