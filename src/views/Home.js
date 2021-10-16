@@ -1,15 +1,20 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
-import { Item } from '../components'
+import { Dimensions, ScrollView, StyleSheet } from 'react-native'
+import { Item, MainCTA } from '../components'
 
-const Home = ({ nItems = 0 }) => {
+const Home = ({ navigation, nItems = 0 }) => {
     return (
-        <ScrollView>
+        <ScrollView style={styles.home}>
             {new Array(nItems).fill({}).map((item, i) => (
                 <Item key={`item:${i}`} {...item} index={i} />
             ))}
+            <MainCTA handlePress={() => navigation.navigate('Graph')} />
         </ScrollView>
     )
 }
 
 export default Home
+
+const styles = StyleSheet.create({
+    home: {}
+})

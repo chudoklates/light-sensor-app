@@ -1,26 +1,43 @@
+// REACT / REACT-NATIVE
 import { StatusBar } from 'expo-status-bar'
-import React, { useState } from 'react'
-import * as eva from '@eva-design/eva'
+import React from 'react'
 import { StyleSheet } from 'react-native'
-// import { useLightSensor } from './utils'
+// NAVIGATION
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+// EVA DESIGN / UIKITTEN
+import * as eva from '@eva-design/eva'
+import { EvaIconsPack } from '@ui-kitten/eva-icons'
 import {
     ApplicationProvider,
     IconRegistry,
-    Layout
+    Layout,
+    Text
 } from '@ui-kitten/components'
-import { EvaIconsPack } from '@ui-kitten/eva-icons'
+// USER DEFINED
 import { theme } from './theme'
-import { Header, MainCTA } from './components'
-import Home from './views/Home'
+import { Header } from './components'
+import { Home } from './views'
+
+const Stack = createNativeStackNavigator()
 
 const App = () => {
-    const [nItems, setNItems] = useState(0)
-
     return (
         <Layout style={styles.container}>
-            <Header />
-            <Home nItems={nItems} />
-            <MainCTA handlePress={() => setNItems(nItems + 1)} />
+            <NavigationContainer>
+                <Stack.Navigator
+                    screenOptions={{
+                        header: (props) => <Header {...props} />
+                    }}
+                >
+                    <Stack.Screen name="Home">
+                        {(props) => <Home {...props} nItems={5} />}
+                    </Stack.Screen>
+                    <Stack.Screen name="Graph">
+                        {(props) => <Text {...props}>Graph</Text>}
+                    </Stack.Screen>
+                </Stack.Navigator>
+            </NavigationContainer>
             <StatusBar style="auto" />
         </Layout>
     )
