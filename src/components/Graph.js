@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Dimensions, View } from 'react-native'
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory-native'
 import useLightSensor from '../utils/useLightSensor'
+import { readDocument, writeDocument, updateDocument } from '../firebase'
 
 const Graph = () => {
     const [data, setData] = useState([])
@@ -9,13 +10,15 @@ const Graph = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setData([
-                ...data,
-                {
-                    time: new Date(),
-                    light
-                }
-            ])
+            const newPoint = {
+                time: new Date(),
+                light
+            }
+            setData([...data, newPoint])
+            writeDocument(`/test-data/${data.length}`, {
+                ...newPoint,
+                time: newPoint.time.toISOString()
+            })
         }, 1000)
         return () => clearInterval(interval)
     }, [data])
