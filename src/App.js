@@ -16,7 +16,7 @@ import {
 } from '@ui-kitten/components'
 // USER DEFINED
 import { theme } from './theme'
-import { Header, DrawerNavigator } from './components'
+import { Header, DrawerNavigator, Graph } from './components'
 import { Home } from './views'
 
 const { Navigator, Screen } = createDrawerNavigator()
@@ -35,7 +35,7 @@ const App = () => {
                         {(props) => <Home {...props} nItems={5} />}
                     </Screen>
                     <Screen name="Graph">
-                        {(props) => <Text {...props}>Graph</Text>}
+                        {(props) => <Graph {...props} />}
                     </Screen>
                 </Navigator>
             </NavigationContainer>
