@@ -1,9 +1,9 @@
 import { db } from '../config'
 
 /**
- * Write a document to the Firebase DB. key can be something like /users/kamil or /test/123
- * @param {string} key
- * @param {object} value
+ * Write a document to the Firebase DB.
+ * @param {string} key Path in the DB where the data should be saved. Can be something like /users/kamil or /test/123
+ * @param {object} value JSON object to be written in the database
  * @returns 0 (success), 1 (error)
  */
 const writeDocument = async (key, value) => {
