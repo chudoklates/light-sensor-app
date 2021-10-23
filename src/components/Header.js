@@ -18,8 +18,6 @@ const MenuAction = (props) => (
 )
 
 const Header = () => {
-    // const light = useLightSensor()
-
     return <TopNavigation accessoryLeft={MenuAction} style={styles.menu} />
 }
 
