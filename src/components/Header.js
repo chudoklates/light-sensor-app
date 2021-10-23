@@ -1,6 +1,12 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { Icon, TopNavigation, TopNavigationAction } from '@ui-kitten/components'
+import {
+    Icon,
+    TopNavigation,
+    TopNavigationAction,
+    Drawer,
+    DrawerItem
+} from '@ui-kitten/components'
 import { colors } from '../theme'
 
 const MenuIcon = (props) => (
@@ -13,12 +19,24 @@ const MenuIcon = (props) => (
     />
 )
 
-const MenuAction = (props) => (
-    <TopNavigationAction icon={MenuIcon} style={styles.menuAction} {...props} />
+const MenuAction = ({ toggleDrawer, ...props }) => (
+    <TopNavigationAction
+        icon={MenuIcon}
+        style={styles.menuAction}
+        {...props}
+        onPress={toggleDrawer}
+    />
 )
 
-const Header = () => {
-    return <TopNavigation accessoryLeft={MenuAction} style={styles.menu} />
+const Header = ({ navigation: { toggleDrawer } }) => {
+    return (
+        <TopNavigation
+            accessoryLeft={(props) => (
+                <MenuAction {...props} toggleDrawer={toggleDrawer} />
+            )}
+            style={styles.menu}
+        />
+    )
 }
 
 export default Header

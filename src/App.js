@@ -4,7 +4,7 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 // NAVIGATION
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 // EVA DESIGN / UIKITTEN
 import * as eva from '@eva-design/eva'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
@@ -16,27 +16,28 @@ import {
 } from '@ui-kitten/components'
 // USER DEFINED
 import { theme } from './theme'
-import { Header } from './components'
+import { Header, DrawerNavigator } from './components'
 import { Home } from './views'
 
-const Stack = createNativeStackNavigator()
+const { Navigator, Screen } = createDrawerNavigator()
 
 const App = () => {
     return (
         <Layout style={styles.container}>
             <NavigationContainer>
-                <Stack.Navigator
+                <Navigator
                     screenOptions={{
                         header: (props) => <Header {...props} />
                     }}
+                    drawerContent={(props) => <DrawerNavigator {...props} />}
                 >
-                    <Stack.Screen name="Home">
+                    <Screen name="Home">
                         {(props) => <Home {...props} nItems={5} />}
-                    </Stack.Screen>
-                    <Stack.Screen name="Graph">
+                    </Screen>
+                    <Screen name="Graph">
                         {(props) => <Text {...props}>Graph</Text>}
-                    </Stack.Screen>
-                </Stack.Navigator>
+                    </Screen>
+                </Navigator>
             </NavigationContainer>
             <StatusBar style="auto" />
         </Layout>
